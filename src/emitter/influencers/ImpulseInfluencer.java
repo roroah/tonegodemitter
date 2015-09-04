@@ -6,8 +6,8 @@ import com.jme3.export.JmeImporter;
 import com.jme3.export.OutputCapsule;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
-import java.io.IOException;
 import emitter.particle.ParticleData;
+import java.io.IOException;
 
 /**
  *
@@ -34,8 +34,8 @@ public class ImpulseInfluencer implements ParticleInfluencer {
 				if (FastMath.rand.nextBoolean()) temp.y = -temp.y;
 				if (FastMath.rand.nextBoolean()) temp.z = -temp.z;
 				temp.multLocal(velocityStore.length());
-				velocityStore.interpolate(temp, magnitude);
-				p.velocity.interpolate(velocityStore, magnitude);
+				velocityStore.interpolateLocal(temp, magnitude);
+				p.velocity.interpolateLocal(velocityStore, magnitude);
 			}
 		}
 	}

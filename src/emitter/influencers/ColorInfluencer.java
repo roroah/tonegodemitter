@@ -7,12 +7,11 @@ import com.jme3.export.OutputCapsule;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector2f;
-import com.jme3.math.Vector3f;
 import com.jme3.util.SafeArrayList;
-import java.io.IOException;
-import java.util.ArrayList;
 import emitter.Interpolation;
 import emitter.particle.ParticleData;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,7 +48,7 @@ public class ColorInfluencer implements ParticleInfluencer {
 			else
 				endColor.set(colors.getArray()[p.colorIndex+1]);
 			
-			p.color.interpolate(startColor, endColor, blend);
+			p.color.interpolateLocal(startColor, endColor, blend);
 		}
 	}
 	

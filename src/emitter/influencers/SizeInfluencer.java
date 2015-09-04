@@ -8,9 +8,9 @@ import com.jme3.math.FastMath;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.util.SafeArrayList;
-import java.io.IOException;
 import emitter.Interpolation;
 import emitter.particle.ParticleData;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +43,7 @@ public class SizeInfluencer implements ParticleInfluencer {
 			
 			blend = p.sizeInterpolation.apply(p.sizeInterval/p.sizeDuration);
 			
-			p.size.interpolate(p.startSize, p.endSize, blend);
+			p.size.interpolateLocal(p.startSize, p.endSize, blend);
 		}
 	}
 	
